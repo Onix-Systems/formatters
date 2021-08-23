@@ -1,0 +1,42 @@
+{
+  "name": "formatters",
+  "version": "1.0.0",
+  "description": "A javascript library for formatting and manipulating.",
+  "main": "dist/formatters.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Onix-Systems/formatters.git"
+  },
+  "keywords": [
+    "format",
+    "formatter",
+    "number",
+    "number-format",
+    "list-format",
+    "date",
+    "datetime"
+  ],
+  "author": "Checha Valerii",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Onix-Systems/formatters/issues"
+  },
+  "homepage": "https://github.com/Onix-Systems/formatters#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "lodash": "^4.17.21",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.0.0"
+  }
+}
