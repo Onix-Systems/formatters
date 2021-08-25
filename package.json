@@ -1,6 +1,6 @@
 {
   "name": "formatters",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A javascript library for formatting and manipulating.",
   "main": "dist/formatters.js",
   "directories": {

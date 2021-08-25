@@ -68,6 +68,96 @@ console.log(numberFormat2.format(amount));
 // expected output: "$654,321.99"
 ```
 
+#### Parameters
+
+#####```locales Optional```
+A string with a BCP 47 language tag, or an array of such strings.
+
+#####```options Optional```
+An object with some or all of the following properties:
+
+```compactDisplay```
+Only used when notation is **"compact"**. Takes either **"short"** (default) or **"long"**.
+
+```currency```
+The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as "USD" for the US dollar, "EUR" for the euro, or "CNY" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is "currency", the currency property must be provided.
+
+```currencyDisplay```
+How to display the currency in currency formatting. Possible values are:
+
+**"symbol"** to use a localized currency symbol such as €, this is the default value,
+**"narrowSymbol"** to use a narrow format symbol ("$100" rather than "US$100"),
+**"code"** to use the ISO currency code,
+**"name"** to use a localized currency name such as **"dollar"**,
+currencySign
+In many locales, accounting format means to wrap the number with parentheses instead of appending a minus sign. You can enable this formatting by setting the currencySign option to **"accounting"**. The default value is **"standard"**.
+
+```localeMatcher```
+The locale matching algorithm to use. Possible values are "lookup" and "best fit"; the default is "best fit". For information about this option, see the Intl page.
+
+```notation```
+The formatting that should be displayed for the number, the defaults is "standard"
+
+**"standard"** plain number formatting
+**"scientific"** return the order-of-magnitude for formatted number.
+**"engineering"** return the exponent of ten when divisible by three
+**"compact"** string representing exponent, defaults is using the **"short"** form.
+numberingSystem
+Numbering System. Possible values include: **"arab", "arabext", " bali", "beng", "deva", "fullwide", " gujr", "guru", "hanidec", "khmr", " knda", "laoo", "latn", "limb", "mlym", " mong", "mymr", "orya", "tamldec", " telu", "thai", "tibt"**.
+
+```signDisplay```
+When to display the sign for the number; defaults to "auto"
+
+**"auto"** sign display for negative numbers only
+**"never"** never display sign
+**"always"** always display sign
+**"exceptZero"** sign display for positive and negative numbers, but not zero
+```style```
+The formatting style to use , the default is **"decimal"**.
+
+**"decimal"** for plain number formatting.
+**"currency"** for currency formatting.
+**"percent"** for percent formatting
+**"unit"** for unit formatting
+
+```javascript
+let amount = 3500;
+
+new NumberFormat('en-US', {style: 'decimal'}).format(amount);
+// → '3,500'
+new NumberFormat('en-US', {style: 'percent'}).format(amount);
+// → '350,000%'
+```
+
+```unit```
+The unit to use in unit formatting, Possible values are core unit identifiers, defined in UTS #35, Part 2, Section 6. A subset of units from the full list was selected for use in ECMAScript. Pairs of simple units can be concatenated with "-per-" to make a compound unit. There is no default value; if the style is "unit", the unit property must be provided.
+
+```unitDisplay```
+The unit formatting style to use in unit formatting, the defaults is **"short"**.
+
+**"long"** (e.g., 16 litres)
+**"short"** (e.g., 16 l)
+**"narrow"** (e.g., 16l)
+useGrouping
+Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.
+
+The following properties fall into two groups: ```minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits``` in one group, ```minimumSignificantDigits and maximumSignificantDigits``` in the other. If at least one property from the second group is defined, then the first group is ignored.
+
+```minimumIntegerDigits```
+The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.
+
+```minimumFractionDigits```
+The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).
+
+```maximumFractionDigits```
+The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.
+
+```minimumSignificantDigits```
+The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.
+
+```maximumSignificantDigits```
+The maximum number of significant digits to use. Possible values are from 1 to 21; the default is 21.
+
 ### ```formatToParts();```
 
 The formatToParts() method is useful for custom formatting of number strings. It returns an Array of objects containing the locale-specific tokens from which it possible to build custom strings while preserving the locale-specific parts. The structure the formatToParts() method returns example:
