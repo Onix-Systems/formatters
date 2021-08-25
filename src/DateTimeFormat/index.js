@@ -1,12 +1,20 @@
+/**
+ * @class ListFormat
+ */
 class ListFormat {
     #locales;
     #options;
     #instance;
     #DEFAULTS = {
-        locales: 'en',
+        locales: 'en-US',
         options: {}
     }
-
+    /**
+     * Creates an instance of ListFormat.
+     * @param {String} locales
+     * @param {Object} options
+     * @memberof ListFormat
+     */
     constructor(locales, options) {
         try {
             this.#locales = locales ?? this.#DEFAULTS.locales;
@@ -24,22 +32,49 @@ class ListFormat {
         }
     }
 
+    /**
+     * @param {Date} date
+     * @return {String}
+     * @memberof ListFormat
+     */
     format(date) {
         return this.#instance.format(date);
     };
 
+    /**
+     * @param {Date} date
+     * @return {Any[]}
+     * @memberof ListFormat
+     */
     formatToParts(date) {
         return this.#instance.formatToParts(date);
     };
 
+    /**
+     * @param {Date} date
+     * @return {Object}
+     * @memberof ListFormat
+     */
     resolvedOptions(date) {
         return this.#instance.resolvedOptions(date);
     };
 
+    /**
+     * @param {Date} startDate
+     * @param {Date} endDate
+     * @return {String}
+     * @memberof ListFormat
+     */
     formatRange(startDate, endDate) {
         return this.#instance.formatRange(startDate, endDate);
     };
 
+    /**
+     * @param {Date} startDate
+     * @param {Date} endDate
+     * @return {String}
+     * @memberof ListFormat
+     */
     formatRangeToParts(startDate, endDate) {
         return this.#instance.formatRange(startDate, endDate);
     };

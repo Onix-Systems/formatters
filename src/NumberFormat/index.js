@@ -1,4 +1,6 @@
-
+/**
+ * @class NumberFormat
+ */
 class NumberFormat {
     #locales;
     #options;
@@ -10,6 +12,11 @@ class NumberFormat {
         }
     }
 
+    /**
+     *
+     * @param {String|Void} locales
+     * @param {Object} options
+     */
     constructor(locales, options) {
         try {
             this.#locales = locales ?? this.#DEFAULTS.locales;
@@ -27,14 +34,29 @@ class NumberFormat {
         }
     }
 
+    /**
+     * @param {Number} number
+     * @return {String}
+     * @memberof NumberFormat
+     */
     format(number) {
         return this.#instance.format(number);
     };
 
+    /**
+     * @param {Number} number
+     * @return {Any[]}
+     * @memberof NumberFormat
+     */
     formatToParts(number) {
         return this.#instance.formatToParts(number);
     };
 
+    /**
+     * @param {Number} number
+     * @return {Object}
+     * @memberof NumberFormat
+     */
     resolvedOptions(number) {
         return this.#instance.resolvedOptions(number);
     };

@@ -1,13 +1,20 @@
-
+/**
+ * @class ListFormat
+ */
 class ListFormat {
     #locales;
     #options;
     #instance;
     #DEFAULTS = {
-        locales: 'en',
+        locales: 'en-US',
         options: {}
     }
-
+    /**
+     * Creates an instance of ListFormat.
+     * @param {String} locales
+     * @param {Object} options
+     * @memberof ListFormat
+     */
     constructor(locales, options) {
         try {
             this.#locales = locales ?? this.#DEFAULTS.locales;
@@ -25,10 +32,20 @@ class ListFormat {
         }
     }
 
+    /**
+     * @param {String[]} list
+     * @return {String}
+     * @memberof ListFormat
+     */
     format(list) {
         return this.#instance.format(list);
     };
 
+    /**
+     * @param {String[]} list
+     * @return {Object}
+     * @memberof ListFormat
+     */
     formatToParts(list) {
         return this.#instance.formatToParts(list);
     };

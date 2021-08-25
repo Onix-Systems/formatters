@@ -8,14 +8,14 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'formatters.js',
         library: 'formatters',
-        libraryTarget: 'umd',
+        libraryTarget: 'var',
         umdNamedDefine: true,
     },
     module: {
         rules: [{
             test: /\.(js)$/,
             exclude: /node_modules/,
-            use: 'babel-loader',
+            use: 'babel-loader'
         }],
     },
     mode: 'development',
@@ -33,6 +33,6 @@ module.exports = {
             cleanOnceBeforeBuildPatterns: [`${path.join(__dirname, 'dist')}/*.hot-update.*`],
             dry: false,
             dangerouslyAllowCleanPatternsOutsideProject: true
-        }),
+        })
     ],
 };
