@@ -1,6 +1,6 @@
 {
   "name": "formatters",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A javascript library for formatting and manipulating.",
   "main": "dist/formatters.js",
   "directories": {
@@ -38,8 +38,6 @@
     "babel-loader": "^8.2.2",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "es6-promise-promise": "^1.0.0",
-    "intl": "^1.2.5",
-    "lodash": "^4.17.21",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0"

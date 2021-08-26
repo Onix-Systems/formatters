@@ -16,11 +16,15 @@ For people who don't like read documentation ;)
 ## Import
 
 ```javascript
+// es6
+import { NumberFormat, ListFormat, DateTimeFormat } from 'formatters';
+
+// es5
 const {
     NumberFormat,
     ListFormat,
     DateTimeFormat
-} = require('fomratters');
+} = require('formatters');
 ```
 
 ## NumberFormat
@@ -70,10 +74,10 @@ console.log(numberFormat2.format(amount));
 
 #### Parameters
 
-#####```locales Optional```
+##### locales Optional
 A string with a BCP 47 language tag, or an array of such strings.
 
-#####```options Optional```
+##### options Optional
 An object with some or all of the following properties:
 
 ```compactDisplay```
@@ -332,21 +336,10 @@ The format getter formats a date into a string according to the locale and forma
 Example:
 
 ```javascript
-const options1 = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-const date1 = new Date(2012, 5);
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+const dateTimeFormat = new DateTimeFormat('sr-RS', options);
 
-const dateTimeFormat1 = new DateTimeFormat('sr-RS', options1);
-console.log(dateTimeFormat1.format(date1));
-// expected output: "петак, 1. јун 2012."
-
-const dateTimeFormat2 = new DateTimeFormat('en-GB', options1);
-console.log(dateTimeFormat2.format(date1));
-// expected output: "Friday, 1 June 2012"
-
-const dateTimeFormat3 = new DateTimeFormat('en-US', options1);
-console.log(dateTimeFormat3.format(date1));
-// expected output: "Friday, June 1, 2012"
-
+console.log(dateTimeFormat.format(new Date()));
 ```
 
 ### ```formatRange();```
